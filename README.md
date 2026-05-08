@@ -1,7 +1,7 @@
-*** Josue Enmanuel Poot Mateo
-*** Arquitectura de software
-*** 3B 
-*** Jorge Javier Pedroza Romero
+** Josue Enmanuel Poot Mateo
+** Arquitectura de software
+** 3B 
+** Jorge Javier Pedroza Romero
 
 # Actividad 2
 
@@ -42,5 +42,3 @@ Para ejecutar este proyecto de manera local, es necesario contar con el SDK de .
 `dotnet run`
 
 ---
-
-© 2026 Josue Poot
