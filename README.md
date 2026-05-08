@@ -1,7 +1,7 @@
-** Josue Enmanuel Poot Mateo
-** Arquitectura de software
-** 3B 
-** Jorge Javier Pedroza Romero
+## Josue Enmanuel Poot Mateo
+## Arquitectura de software
+## 3B 
+## Jorge Javier Pedroza Romero
 
 # Actividad 2
 
