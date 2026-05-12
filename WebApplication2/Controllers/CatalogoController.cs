@@ -10,64 +10,64 @@ public class CatalogoController : Controller
         new Item
         {
             Id = 1,
-            Titulo = "Devil May Cry",
-            Genero = "Hack and Slash",
-            Ano = 2001,
-            Consola = "PlayStation 2",
-            Descripcion = "Videojuego que trata de un cazador..."
+            Cliente = "Josue Poot",
+            Platillo = "Ramen Tonkotsu",
+            Cantidad = 1,
+            TipoConsumo = "Para comer aquí",
+            InstruccionesEspeciales = "Extra chashu, sin cebollín."
         },
         new Item
         {
             Id = 2,
-            Titulo = "Castlevania: Symphony of the Night",
-            Genero = "Metroidvania",
-            Ano = 1997,
-            Consola = "PlayStation 1", // Ojo: La imagen dice PS2, pero este es de PS1 originalmente.
-            Descripcion = "Videojuego que trata de un cazador..."
+            Cliente = "Dr. Jorge Pedrozo",
+            Platillo = "Spicy Miso (Nivel .NET)",
+            Cantidad = 2,
+            TipoConsumo = "Para llevar",
+            InstruccionesEspeciales = "Picante nivel error de producción. Cubiertos extra."
         },
         new Item 
         { 
             Id = 3,
-            Titulo = "NieR: Automata",
-            Genero = "Action RPG",
-            Ano = 2017,
-            Consola = "PlayStation 4",
-            Descripcion = "Una guerra entre androides y máquinas."
+            Cliente = "Kyojuro Rengoku",
+            Platillo = "Shoyu Ramen Clásico",
+            Cantidad = 15,
+            TipoConsumo = "Para comer aquí",
+            InstruccionesEspeciales = "¡UMAI! Servir hirviendo."
         }
     };
-    // Parte 3 de 4: Lista con filtro opcional por género
-    public IActionResult Index(string? genero)
-    {
-        var resultado = string.IsNullOrEmpty(genero)
-            ? _items
-            : _items.Where(i => i.Genero == genero).ToList();
 
-        ViewBag.Generos = _items.Select(i => i.Genero).Distinct().ToList();
-        ViewBag.GeneroActual = genero;
+    // GET: /Catalogo/Index (Ahora filtra por Platillo)
+    public IActionResult Index(string? platillo)
+    {
+        var resultado = string.IsNullOrEmpty(platillo)
+            ? _items
+            : _items.Where(i => i.Platillo == platillo).ToList();
+
+        ViewBag.Platillos = _items.Select(i => i.Platillo).Distinct().ToList();
+        ViewBag.PlatilloActual = platillo;
 
         return View(resultado);
     }
 
-    // Detalle
+    // GET: /Catalogo/Detalle/{id}
     public IActionResult Detalle(int id)
     {
         var item = _items.FirstOrDefault(i => i.Id == id);
         return item == null ? NotFound() : View(item);
     }
 
-    // Parte 4 de 4: Formulario - GET
+    // GET: /Catalogo/Agregar
     public IActionResult Agregar()
     {
         return View();
     }
 
-    // Formulario - POST
+    // POST: /Catalogo/Agregar
     [HttpPost]
     public IActionResult Agregar(Item item)
     {
-        item.Id = _items.Count + 1;
+        item.Id = _items.Any() ? _items.Max(i => i.Id) + 1 : 1;
         _items.Add(item);
         return RedirectToAction("Index");
     }
-
 }

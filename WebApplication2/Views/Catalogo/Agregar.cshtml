@@ -1,31 +1,64 @@
 @model WebApplication2.Models.Item
 
-<h1>Agregar videojuego</h1>
+<div class="ramen-landing-container">
+    <div class="text-center">
+        <h1 class="specialty-title">Registrar Nuevo Pedido</h1>
+        <p class="ramen-slogan">Toma la orden del cliente e ingrésala al sistema</p>
+    </div>
 
-<form asp-action="Agregar" method="post">
-    <div>
-        <label>Título</label>
-        <input asp-for="Titulo" />
+    <div class="menu-card" style="max-width: 600px; margin: 0 auto;">
+        <form asp-action="Agregar" method="post">
+            
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label asp-for="Cliente" style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Nombre del Cliente</label>
+                <input asp-for="Cliente" class="form-control" placeholder="Ej. Josue Poot" required />
+                <span asp-validation-for="Cliente" class="text-danger" style="color: var(--accent-color); font-size: 0.9em;"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label asp-for="Platillo" style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Platillo a Ordenar</label>
+                <input asp-for="Platillo" class="form-control" placeholder="Ej. Ramen Tonkotsu, Gyozas..." required />
+                <span asp-validation-for="Platillo" class="text-danger" style="color: var(--accent-color); font-size: 0.9em;"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label asp-for="Cantidad" style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Cantidad</label>
+                <input asp-for="Cantidad" type="number" min="1" value="1" class="form-control" required />
+                <span asp-validation-for="Cantidad" class="text-danger" style="color: var(--accent-color); font-size: 0.9em;"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label asp-for="TipoConsumo" style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Tipo de Servicio</label>
+                <select asp-for="TipoConsumo" class="form-control" required>
+                    <option value="">-- Selecciona una opción --</option>
+                    <option value="Para comer aquí">Para comer aquí</option>
+                    <option value="Para llevar">Para llevar</option>
+                    <option value="Plataforma de delivery">Delivery</option>
+                </select>
+                <span asp-validation-for="TipoConsumo" class="text-danger" style="color: var(--accent-color); font-size: 0.9em;"></span>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label asp-for="InstruccionesEspeciales" style="color: var(--primary-color); font-weight: bold; margin-bottom: 0.5rem;">Instrucciones Especiales</label>
+                <textarea asp-for="InstruccionesEspeciales" class="form-control" rows="3" placeholder="Sin cebollín, extra picante, etc." required></textarea>
+                <span asp-validation-for="InstruccionesEspeciales" class="text-danger" style="color: var(--accent-color); font-size: 0.9em;"></span>
+            </div>
+            
+            <div class="text-center" style="margin-top: 2rem;">
+                <button type="submit" class="btn-order" style="width: 100%;">Mandar Orden a Cocina</button>
+            </div>
+        </form>
     </div>
-    <div>
-        <label>Género</label>
-        <input asp-for="Genero" />
-    </div>
-    <div>
-        <label>Consola</label>
-        <input asp-for="Consola" />
-    </div>
-    <div>
-        <label>Año</label>
-        <input asp-for="Ano" type="number" />
-    </div>
-    <div>
-        <label>Descripción</label>
-        <textarea asp-for="Descripcion"></textarea>
-    </div>
+
+    <hr style="border-top: 1px solid var(--bg-card); margin: 2rem 0;" />
     
-    <button type="submit">Guardar Videojuego</button>
-</form>
+    <div class="text-center">
+        <a asp-action="Index" style="color: var(--text-muted); text-decoration: none; font-weight: 500;">
+            &larr; Cancelar y volver a pedidos
+        </a>
+    </div>
+</div>
 
-<hr />
-<a asp-action="Index">Cancelar</a>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,8 +1,64 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Menú de Ramen - JossPoot.Net";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido a JossPoot.Net</h1>
-    <p>About me! <a href="https://github.com/Josspoot">Joss Poot GitHub ;)</a>.</p>
+<div class="ramen-landing-container text-center">
+    
+    <header class="ramen-header">
+        <h1 class="display-4 ramen-title">Bienvenido a JossPoot.Net</h1>
+        <p class="ramen-subtitle">About me! <a href="https://github.com/Josspoot" class="github-profile-link" target="_blank">Joss Poot GitHub ;)</a></p>
+        <h2 class="ramen-slogan">Aquí encontrarás los mejores Ramens de todo el ciberespacio</h2>
+    </header>
+    
+    <section class="ramen-specialty-section">
+        <h3 class="specialty-title">Ramen Tonkotsu</h3>
+        
+        <div class="specialty-info">
+            <p class="specialty-highlight">Es considerado la especialidad de la casa</p>
+            
+            <ul class="specialty-reviews">
+                <li class="review-item">💻 9 de cada 10 programadores de Linux lo recomiendan para debugear en la madrugada.</li>
+                <li class="review-item">👨‍⚕️ Aprobado por el Dr. Jorge Pedrozo.</li>
+                <li class="review-item">🔥 Validado con una estrella por Rengoku.</li>
+            </ul>
+
+            <img class="specialty-img" src="https://preview.redd.it/umai-im-not-super-familiar-with-japanese-cuisine-but-i-v0-9fo29z4t4lw61.jpg?auto=webp&s=94ae11266bf93e476f24b4d013d88d70c8df7657" alt="Rengoku gritando Umai probando comida deliciosa">
+        </div>
+    </section>
+    
+    <section class="ramen-menu-section">
+        <h3 class="menu-title">Variedad de Platillos que te pueden gustar:</h3>
+        
+        <div class="menu-grid">
+            
+           
+            <article class="menu-card">
+                <h4 class="dish-name">Shoyu Ramen Clásico</h4>
+                <p class="dish-desc">Caldo a base de salsa de soja, ligero pero con un sabor profundo. Ideal para los que logran que su código compile a la primera.</p>
+                <span class="dish-price">$120.00</span>
+            </article>
+
+            
+            <article class="menu-card">
+                <h4 class="dish-name">Spicy Miso (Nivel .NET)</h4>
+                <p class="dish-desc">Un caldo espeso y reconfortante. Picante nivel "Error de producción un viernes a las 5 PM". Te reinicia el servidor y el alma.</p>
+                <span class="dish-price">$145.00</span>
+            </article>
+
+           
+            <article class="menu-card">
+                <h4 class="dish-name">Gyozas C# (Orden de 6)</h4>
+                <p class="dish-desc">Empanadillas japonesas crujientes por fuera, suaves por dentro. Fuertemente tipadas y sin bugs.</p>
+                <span class="dish-price">$85.00</span>
+            </article>
+
+        </div>
+    </section>
+    
+    
+    <footer class="ramen-footer">
+        <p class="footer-text">¿Listo para hacer un <em>Git Push</em> a tu estómago?</p>
+        <button class="btn-order">Ordenar Ahora</button>
+    </footer>
+
 </div>

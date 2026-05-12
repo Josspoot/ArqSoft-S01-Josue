@@ -204,7 +204,6 @@
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/nezrqnk58p-{0}-muycvpuwrr-muycvpuwrr.gz
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/v0zgfp0y55-{0}-87fc7y1x7t-87fc7y1x7t.gz
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/yfc7ypekbg-{0}-mlv21k5csn-mlv21k5csn.gz
-/Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/dxqj2xv6zo-{0}-lugek5hnai-lugek5hnai.gz
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/8ugws988hw-{0}-61n19gt1b8-61n19gt1b8.gz
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/zt0mdot0v5-{0}-fr7q2aak1r-fr7q2aak1r.gz
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/1jivc7nuui-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -279,3 +278,5 @@
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/WebApplication2.pdb
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/WebApplication2.genruntimeconfig.cache
 /Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/ref/WebApplication2.dll
+/Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/WebApplication2.sourcelink.json
+/Users/Joss/RiderProjects/WebApplication2/WebApplication2/obj/Debug/net10.0/compressed/dxqj2xv6zo-{0}-07ivuuwzku-07ivuuwzku.gz

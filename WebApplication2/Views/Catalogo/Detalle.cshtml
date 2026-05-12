@@ -1,11 +1,47 @@
 @model WebApplication2.Models.Item
 
-<h1>@Model.Titulo</h1>
+<div class="ramen-landing-container">
+    <div class="text-center">
+        <h1 class="specialty-title">Detalles del Pedido #@Model.Id</h1>
+        <p class="ramen-slogan">Información completa para la cocina</p>
+    </div>
 
-<p><strong>Género:</strong> @Model.Genero</p>
-<p><strong>Consola:</strong> @Model.Consola</p>
-<p><strong>Año:</strong> @Model.Ano</p>
-<p><strong>Descripción:</strong> @Model.Descripcion</p>
+    <div class="menu-card" style="max-width: 600px; margin: 0 auto; padding: 2rem;">
+        
+        <h2 style="color: var(--primary-color); border-bottom: 1px solid #4d4f54; padding-bottom: 15px; margin-top: 0; text-align: center;">
+            👨‍🍳 Cliente: @Model.Cliente
+        </h2>
 
-<hr />
-<a asp-action="Index">&larr; Volver al Catálogo</a>
+        <div style="margin-top: 2rem; font-size: 1.1rem;">
+            <p style="margin-bottom: 15px;">
+                <strong style="color: var(--secondary-color);">Platillo Solicitado:</strong> 
+                <span style="color: var(--text-main);">@Model.Platillo</span>
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                <strong style="color: var(--secondary-color);">Cantidad:</strong> 
+                <span style="color: var(--text-main);">@Model.Cantidad tazón(es)</span>
+            </p>
+            
+            <p style="margin-bottom: 15px;">
+                <strong style="color: var(--secondary-color);">Tipo de Servicio:</strong> 
+                <span style="color: var(--text-main);">@Model.TipoConsumo</span>
+            </p>
+            
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed var(--text-muted);">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 10px;">Instrucciones Especiales:</strong>
+                <p style="color: var(--text-main); font-style: italic; background-color: var(--bg-dark); padding: 15px; border-radius: 8px;">
+                    "@Model.InstruccionesEspeciales"
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border-top: 1px solid var(--bg-card); margin: 3rem 0 2rem 0;" />
+    
+    <div class="text-center">
+        <a asp-action="Index" class="btn-order" style="text-decoration: none; display: inline-block;">
+            &larr; Volver a Pedidos
+        </a>
+    </div>
+</div>

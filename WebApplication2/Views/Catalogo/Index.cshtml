@@ -1,29 +1,55 @@
-@model List<WebApplication2.Models.Item>
+@model IEnumerable<WebApplication2.Models.Item>
 
-<h1>Mi Catálogo</h1>
+<div class="ramen-landing-container text-center">
+    
+    <h1 class="specialty-title">Panel de Pedidos Activos</h1>
+    <p class="ramen-slogan">Revisa y filtra los pedidos del restaurante</p>
 
-<!-- Filtro por género -->
-<div>
-    <a asp-action="Index">Todos</a>
-    @foreach (var gen in ViewBag.Generos as List<string>)
-    {
-        <span> | </span>
-        <a asp-action="Index" asp-route-genero="@gen">@gen</a>
-    }
+    <!-- Barra de Filtros -->
+    <div class="menu-card" style="margin-bottom: 2rem; padding: 1rem;">
+        <form asp-action="Index" method="get" style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <label style="color: var(--primary-color); font-weight: bold; margin: 0;">Filtrar por Platillo:</label>
+            
+            <select name="platillo" class="form-control" style="width: auto; display: inline-block;">
+                <option value="">Todos los pedidos</option>
+                @foreach (var platillo in ViewBag.Platillos)
+                {
+                    if (platillo == ViewBag.PlatilloActual)
+                    {
+                        <option value="@platillo" selected>@platillo</option>
+                    }
+                    else
+                    {
+                        <option value="@platillo">@platillo</option>
+                    }
+                }
+            </select>
+            
+            <button type="submit" class="btn-order" style="padding: 8px 20px; font-size: 1rem;">Filtrar</button>
+        </form>
+    </div>
+
+    <!-- Grid de Pedidos -->
+    <div class="menu-grid">
+        @foreach (var item in Model)
+        {
+            <article class="menu-card">
+                <h4 class="dish-name">Pedido #@item.Id - @item.Cliente</h4>
+                <p class="dish-desc"><strong>Platillo:</strong> @item.Platillo</p>
+                <p class="dish-desc"><strong>Cantidad:</strong> @item.Cantidad tazón(es)</p>
+                <p class="dish-desc" style="flex-grow: 1;"><strong>Servicio:</strong> @item.TipoConsumo</p>
+                
+                <div style="margin-top: 1rem; display: flex; gap: 10px; justify-content: space-between;">
+                    <a asp-action="Detalle" asp-route-id="@item.Id" class="github-profile-link" style="margin: 0; text-align: center; flex: 1;">Ver Detalles de la Orden</a>
+                </div>
+            </article>
+        }
+    </div>
+
+    <hr style="border-top: 1px solid var(--bg-card); margin: 2rem 0;" />
+    
+    <div style="margin-top: 2rem;">
+        <a asp-action="Agregar" class="btn-order" style="text-decoration: none;">+ Registrar Nuevo Pedido</a>
+    </div>
+
 </div>
-
-<hr />
-
-<!-- Lista de items -->
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            <a asp-action="Detalle" asp-route-id="@item.Id">@item.Titulo</a>
-            -- @item.Genero (@item.Ano)
-        </li>
-    }
-</ul>
-
-<hr />
-<a asp-action="Agregar">+ Agregar Videojuego</a>
