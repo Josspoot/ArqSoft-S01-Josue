@@ -7,6 +7,23 @@
 
 Este proyecto consiste en una aplicación web rediseñada para la gestión y clasificación de un menú interactivo y sistema de pedidos de un restaurante de Ramen. Proporciona una interfaz estilizada y temática donde el usuario puede registrar nuevas órdenes, visualizar los detalles de cada platillo y organizarlos dentro del catálogo digital.
 
+# Imágenes de presentación del sistema 
+
+| | |
+|:---:|:---:|
+| <img alt="image" src="https://github.com/user-attachments/assets/07cd4248-9115-4d9b-b148-39d22a70bb34" width="100%" /> | <img alt="image" src="https://github.com/user-attachments/assets/0de2c901-b1f0-425f-a23f-ed78fe096075" width="100%" /> |
+| <img alt="image" src="https://github.com/user-attachments/assets/fad46bde-1552-447b-89f2-2dadb5be30eb" width="100%" /> | <img alt="image" src="https://github.com/user-attachments/assets/fab24f4a-8cf3-45ee-b72f-4efff5a43873" width="100%" /> |
+| <img alt="image" src="https://github.com/user-attachments/assets/bd10eea5-1e36-4526-b6ba-e9e006017731" width="100%" /> | <img alt="image" src="https://github.com/user-attachments/assets/be46218e-e313-4295-8bbc-beea3eca05b1" width="100%" /> |
+| <img alt="image" src="https://github.com/user-attachments/assets/2601d249-06a5-4a2e-b481-40b667e4ce50" width="100%" /> | 
+
+
+
+
+
+
+
+
+
 ## Tecnologías Utilizadas
 
 El desarrollo de la plataforma se basa en un stack tecnológico robusto que separa la lógica de negocio de la capa de presentación:
